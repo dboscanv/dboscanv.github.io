@@ -1362,7 +1362,7 @@ a.newer-posts:hover {
 
 /* Custom dboscanv */
 
-footer, header {
+footer, header:not(.header-page) {
   background-color: #009587;
   color: #ffffff;
 }
