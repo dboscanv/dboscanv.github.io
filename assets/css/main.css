@@ -775,7 +775,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   color: #515151;
-  background-color: #fbfbfb;
+  background-color: #fafafa;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -933,7 +933,7 @@ table tfoot td {
   width: 240px;
   height: 100%;
   padding: 20px 10px;
-  background-color: #ffffff;
+  background-color: #009587;
 }
 
 .about {
@@ -992,7 +992,7 @@ table tfoot td {
   height: 7px;
   -webkit-border-radius: 100%;
           border-radius: 100%;
-  background-color: #515151;
+  background-color: #ffffff;
 }
 
 .about p {
@@ -1078,7 +1078,7 @@ table tfoot td {
 }
 
 .contact ul li a {
-  color: #515151;
+  color: #ffffff;
   display: block;
   padding: 5px;
   font-size: 18px;
@@ -1360,6 +1360,12 @@ a.newer-posts:hover {
 .tag-list span a:hover {
   text-decoration: underline;
   opacity: .8;
+}
+
+/* Custom dboscanv */
+
+footer, header {
+  color: #009587;
 }
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
