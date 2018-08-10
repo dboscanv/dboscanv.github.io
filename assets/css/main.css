@@ -975,7 +975,6 @@ table tfoot td {
   padding-bottom: 15px;
   font-size: 16px;
   text-transform: uppercase;
-  color: #333030;
   font-weight: 700;
 }
 
@@ -1023,7 +1022,6 @@ table tfoot td {
 
 .contact .contact-title {
   position: relative;
-  color: #333030;
   font-weight: 400;
   font-size: 12px;
   margin: 0 0 5px;
@@ -1043,7 +1041,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   left: 0;
-  background-color: #515151;
+  background-color: #ffffff;
 }
 
 .contact .contact-title::after {
@@ -1058,7 +1056,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   right: 0;
-  background-color: #515151;
+  background-color: #ffffff;
 }
 
 .contact ul {
@@ -1365,7 +1363,8 @@ a.newer-posts:hover {
 /* Custom dboscanv */
 
 footer, header {
-  color: #009587;
+  background-color: #009587;
+  color: #ffffff;
 }
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
