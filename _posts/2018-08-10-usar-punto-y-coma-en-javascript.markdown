@@ -2,7 +2,7 @@
 layout: post
 title: ¿Debería usar punto y coma en JavaScript?
 date: 2018-08-01 00:00:00 +0300
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+description: ¿Es realmente necesario usar punto y coma en JavaScript? La respuesta corta es no, pero hay unas reglas que tenemos que saber.
 img: js-1.png # Add image post (optional)
 tags: [JavaScript, ES6] # add tag
 ---
@@ -12,7 +12,7 @@ Sabía que era permitido, pero que era considerado como una mala practica, al ig
 
 La respuesta corta es **no**, no es necesario. JavaScript interpreta el código y infiere donde termina el bloque para colocar el punto y coma. Además, actualmente no es considerado una mala práctica. Por lo tanto, es cuestión de gustos, sin embargo, hay unas reglas indicadas en la [especificación ECMA](http://www.ecma-international.org/ecma-262/7.0/) que debemos saber.
 
-## Cómo funciona el *Automatic Semicolon Insertion* de JavaScript?
+## ¿Cómo funciona el *Automatic Semicolon Insertion* de JavaScript?
 
 El intérprete de JavaScript lee el código de izquierda a derecha e inserta el punto y coma (sino esta presente) cuando se cumplan una de estas reglas:
 
@@ -82,7 +82,7 @@ const c = a + b
 [1, 2, 3].forEach((e) => console.log(e))
 ```
 
-JavaScript lanza el siguiente error: `TypeError: Cannot read property 'forEach' of undefined`, esto es porque en la línea 3 al finalizar la declaración el siguiente carácter es `[`, lo cual es totalmente válido, de manera que en ese caso no se inserta un punto y coma, produciéndose el error porque `b[1, 2, 3]` es `undefined`.
+JavaScript lanza el siguiente error: `TypeError: Cannot read property 'forEach' of undefined`, esto es porque en la línea 3 al finalizar la declaración el siguiente carácter es `[`, lo cual es totalmente válido, por lo cual no se inserta un punto y coma, produciéndose el error porque `b[1, 2, 3]` es `undefined`.
 
 ## Conclusión
 
