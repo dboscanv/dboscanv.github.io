@@ -1,7 +1,6 @@
 ---
 layout: post
 title: ¿Debería usar punto y coma en JavaScript?
-date: 2018-08-10 00:00:00 +0300
 description: ¿Es realmente necesario usar punto y coma en JavaScript? La respuesta corta es no, pero hay unas reglas que tenemos que saber.
 img: js-1.png # Add image post (optional)
 tags: [JavaScript, ES6] # add tag
