@@ -6,7 +6,7 @@ description: You’ll find this post in your `_posts` directory. Go ahead and ed
 img: js-1.png # Add image post (optional)
 tags: [JavaScript, ES6] # add tag
 ---
-Hace unos meses, vi por primera vez código JavaScript sin puntos y comas, las personas que venimos de la "escuela Java" estamos acostumbrados a colocar punto y coma (semicolon en inglés) casi que automáticamente al finalizar una expresión. 
+Hace unos meses vi por primera vez código JavaScript sin puntos y comas, yo soy una de esas personas que venimos de la "escuela Java", y estamos acostumbrados a colocar punto y coma (semicolon en inglés) casi que automáticamente al finalizar una expresión. 
 
 Sabía que era permitido, pero que era considerado como una mala practica, al igual que declarar variables sin `var` (en aquel momento, ahora debemos usar `let`). Pero como el mundo de la programación es tan cambiante, se me genero la duda de **si es actualmente es necesario usar semicolons en JavaScript**.
 
@@ -38,7 +38,7 @@ console.log(x, y)
 
 El intérprete empieza a analizar el código desde la línea 1 de izquierda a derecha, cuando pasa a la siguiente línea y analiza el primer carácter (la `l`) encuentra un posible error: no esta permitido declarar una variable con el valor `10l`, en ese momento aplica la regla 1, que dice que si hay un salto de línea en ese punto se coloca un punto y coma. También lo coloca en la declaración de `obj`, ya que el carácter es `}`.
 
-En el mismo ejemplo se aplica la regla 2, al final del programa, cuando no hay más nada que analizar termina con un punto y coma, de manera que el código es transformado por el *ASI* así:
+En el mismo ejemplo se aplica la regla 2, al final del programa, cuando no hay más nada que analizar termina con un punto y coma, de manera que el código es transformado por JavaScript así:
 
 ```javascript
 let x = 10;
@@ -48,7 +48,7 @@ let obj = {a:1,b:2};
 console.log(x, y);
 ```
 
-Existe una excepción: **en un ciclo for la regla no aplica**, los punto y coma son obligatorios cuando se define un for. Por último, en el caso de la regla 3 hay que tener un poco más de cuidado, consideren el siguiente ejemplo:
+Existe una excepción: **en un ciclo for la regla no aplica**, los punto y coma son obligatorios cuando se define el cuerpo del for. Por último, en el caso de la regla 3 hay que prestarle mucha atención, consideren el siguiente ejemplo:
 
 ```javascript
 let x = 5
@@ -82,10 +82,10 @@ const c = a + b
 [1, 2, 3].forEach((e) => console.log(e))
 ```
 
-JavaScript lanza el siguiente error: `TypeError: Cannot read property 'forEach' of undefined`, esto es porque en la línea 3 al finalizar la declaración el siguiente carácter es `[`, lo cual es totalmente válido, de manera que en ese caso no se inserta un punto y coma, produciéndose el error ya que `b[1, 2, 3]` es `undefined`.
+JavaScript lanza el siguiente error: `TypeError: Cannot read property 'forEach' of undefined`, esto es porque en la línea 3 al finalizar la declaración el siguiente carácter es `[`, lo cual es totalmente válido, de manera que en ese caso no se inserta un punto y coma, produciéndose el error porque `b[1, 2, 3]` es `undefined`.
 
 ## Conclusión
 
-Una vez visto como funciona el *Automatic Semicolon Insertion*, considero que el uso de semicolons debe ser o bien decisión del equipo (por ejemplo, en el [código fuente de Vue](https://github.com/vuejs/vue/blob/dev/src/core/util/lang.js) no utilizan) o del programador. 
+Una vez visto como funciona el *Automatic Semicolon Insertion* de JavaScript, considero que el uso de semicolons debe ser o bien decisión del equipo (por ejemplo, en el [código fuente de Vue](https://github.com/vuejs/vue/blob/dev/src/core/util/lang.js) no utilizan) o del programador. 
 
 Personalmente, soy partidario del uso de semicolons, prefiero colocar explícitamente donde termina la expresión y que no lo haga JavaScript por mi.
