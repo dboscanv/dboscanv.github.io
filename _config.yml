@@ -1,8 +1,6 @@
 title: Diego Boscan - Desarrollador
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Desarrollador web full stack, mi objetivo es compartir conocimiento y aprender en el camino
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -12,14 +10,13 @@ site-twitter: #if your site has a twitter account, enter it here
 author: Diego Boscan # add your name
 author-img: diego.jpg # add your photo
 about-author: I am a web developer focusing on front-end development. Always hungry to keep learning. # add description
-social-twitter: # add your Twitter handle
-social-facebook: # add your Facebook handle
+
 social-github: dboscanv # add your Github handle
-social-linkedin: https://www.linkedin.com/in/diego-boscan-586b16108/# add your Linkedin handle
+social-linkedin: diego-boscan-586b16108 # add your Linkedin handle
 social-email: dboscanv@gmail.com # add your Email address
 
 # Disqus
-discus-identifier: mr-brown # add your discus identifier
+discus-identifier: dboscanv # add your discus identifier
 
 # Tracker
 analytics: # Google Analytics
@@ -30,6 +27,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
+  - jekyll-seo-tag
+
 
 paginate: 8
 paginate_path: "/page/:num"
