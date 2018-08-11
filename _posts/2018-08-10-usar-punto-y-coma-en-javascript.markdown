@@ -86,6 +86,6 @@ JavaScript lanza el siguiente error: `TypeError: Cannot read property 'forEach' 
 
 ## Conclusión
 
-Una vez visto como funciona el *Automatic Semicolon Insertion* de JavaScript, considero que el uso de semicolons debe ser o bien decisión del equipo (por ejemplo, en el [código fuente de Vue](https://github.com/vuejs/vue/blob/dev/src/core/util/lang.js) no utilizan) o del programador. 
+Una vez visto como funciona el *Automatic Semicolon Insertion* de JavaScript, considero que el uso de semicolons debe ser o bien decisión del equipo (por ejemplo, en el core de [Vue](https://github.com/vuejs/vue/blob/dev/src/core/util/lang.js) no utilizan) o del programador. 
 
 Personalmente, soy partidario del uso de semicolons, prefiero colocar explícitamente donde termina la expresión y que no lo haga JavaScript por mi.
