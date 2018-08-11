@@ -1197,6 +1197,11 @@ a.newer-posts:hover {
   padding: 20px;
 }
 
+.wrap-content p {
+  font-size:17px;
+  text-align: justify;
+}
+
 .header-page {
   text-align: center;
   margin: 10px 0;
