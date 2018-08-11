@@ -9,14 +9,14 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Diego Boscan # add your name
 author-img: diego.jpg # add your photo
-about-author: I am a web developer focusing on front-end development. Always hungry to keep learning. # add description
+about-author: Ingeniero en informática, desarrollador web. Aprendiendo cada día  # add description
 
 social-github: dboscanv # add your Github handle
 social-linkedin: diego-boscan-586b16108 # add your Linkedin handle
 social-email: dboscanv@gmail.com # add your Email address
 
 # Disqus
-discus-identifier: dboscanv # add your discus identifier
+discus-identifier: diegoboscan # add your discus identifier
 
 # Tracker
 analytics: UA-123744687-1 # Google Analytics
