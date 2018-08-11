@@ -140,7 +140,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Ubuntu Mono', monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
