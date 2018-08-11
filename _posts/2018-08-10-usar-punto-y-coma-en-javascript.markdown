@@ -8,7 +8,7 @@ tags: [JavaScript, ES6] # add tag
 ---
 Hace unos meses vi por primera vez código JavaScript sin puntos y comas, yo soy una de esas personas que venimos de la "escuela Java", y estamos acostumbrados a colocar punto y coma (semicolon en inglés) casi que automáticamente al finalizar una expresión. 
 
-Sabía que era permitido, pero que era considerado como una mala practica, al igual que declarar variables sin `var` (en aquel momento, ahora debemos usar `let`). Pero como el mundo de la programación es tan cambiante, se me genero la duda de **si es actualmente es necesario usar semicolons en JavaScript**.
+Sabía que era permitido, pero que era considerado como una mala practica, al igual que declarar variables sin `var` (en aquel momento, ahora debemos usar `let`). Pero como el mundo de la programación es tan cambiante, se me genero la duda de **si es actualmente necesario usar semicolons en JavaScript**.
 
 La respuesta corta es **no**, no es necesario. JavaScript interpreta el código y infiere donde termina el bloque para colocar el punto y coma. Además, actualmente no es considerado una mala práctica. Por lo tanto, es cuestión de gustos, sin embargo, hay unas reglas indicadas en la [especificación ECMA](http://www.ecma-international.org/ecma-262/7.0/) que debemos saber.
 
