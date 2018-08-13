@@ -21,7 +21,7 @@ El intérprete de JavaScript lee el código de izquierda a derecha e inserta el 
 2. Al final del programa
 3. Encuentra un `++`, `--`,`return`,`continue`,`return` o `throw` y después hay un salto de línea
 
-Aclarar que estas reglas se aplican siempre y cuando el programa no sea en una línea, en ese caso usar semicolon es obligatorio, `let a=1 let b=2` no esta permitido. 
+Estas reglas se aplican siempre y cuando el programa no sea en una línea, en ese caso usar semicolon es obligatorio, `let a=1 let b=2` no está permitido.
 
 ## En la práctica
 
@@ -47,7 +47,7 @@ let obj = {a:1,b:2};
 console.log(x, y);
 ```
 
-Existe una excepción: **en un ciclo for la regla no aplica**, los punto y coma son obligatorios cuando se define el cuerpo del for. Por último, en el caso de la regla 3 hay que prestarle mucha atención, consideren el siguiente ejemplo:
+Por último, en el caso de la regla 3 es donde hay ser más cuidadosos cuando programamos sin punto y coma. Consideren el siguiente ejemplo:
 
 ```javascript
 let x = 5
