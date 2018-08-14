@@ -10,4 +10,4 @@ Mi nombre es Diego Boscan, en 2017 me recibí como Ingeniero en Informática en 
 
 Sin embargo, también me gustan otros lenguajes con los que he trabajado: Python (Django), PHP (Laravel).
 
-Con este blog tengo como objetivo aportar a la comunidad de desarrolladores compartiendo conocimiento y aprendiendo en el camino.
+Soy autodidacta y me gusta mantenerme actualizado, por tal motivo cree este blog, para compartir lo que voy aprendiendo.
