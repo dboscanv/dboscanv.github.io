@@ -77,7 +77,7 @@ Para el procesamiento de archivos .css e imagenes, tenemos que instalar los *loa
     }
 ```
 
-Acá colocamos dos reglas, la de los archivos `.css` y las imagenes, con una expresión regular indicamos los tipos de archivo en la key `test`, y en `use` los loaders necesarios. Con esto ya Webpack sabe que todos los archivos que terminen en .css van a ser procesados mediante esos loaders. Para probar todo lo que llevamos, vamos a crear un archivo `style.css` donde definiremos la clase `test-class` y también colocaré una imagen. Finalmente en el archivo `index.js` escribiremos lo siguiente:
+Acá creamos dos reglas, una para archivos `.css` y otra para las imagenes, con una expresión regular indicamos los tipos de archivo en la key `test`, y en `use` los loaders necesarios. Con esto ya Webpack sabe que todos los archivos que terminen en `.css` van a ser procesados mediante esos loaders. Para probar lo que llevamos, vamos a crear un archivo `style.css` donde definiremos la clase `test-class` y también colocaré una imagen. Finalmente en el archivo `index.js` escribiremos lo siguiente:
 
 ```javascript
 import './style.css';
