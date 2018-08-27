@@ -7,13 +7,16 @@ tags: [JavaScript, Webpack]
 ---
 [Webpack](https://webpack.js.org/) es una herramienta de empaquetado de modulos que nos facilita la vida. Básicamente, con un simple comando nos crea un `main.js` optimizado donde tiene incluido nuestros archivos JavaScript. 
 
-## Por que usar Webpack?
+TODO: Benefits.
 
-Desde la versión 4, ejecutando `npx webpack` buscará el archivo principal de tu aplicación en `src/index.js` y generará el archivo `main.js` sin necesidad de tocar nada más, sin embargo, en el 99% de los casos vas a necesitar configurar el procesamiento de archivos que hace Webpack.
+
+Webpack esta muy presente en el desarrollo web actual. De hecho si utilizamos herramientas de los frameworks tales como [angular-cli](https://github.com/angular/angular-cli) o [create-react-app](https://github.com/facebook/create-react-app/blob/next/packages/react-scripts/package.json) en el fondo estamos usando webpack. El objetivo de estas herramientas es que los desarrolladores no hagamos ese trabajo de configuración y nos preocupemos solo por el código, sin embargo, es probable que en algún momento necesitemos hacer algo más avanzado, y para cuando llegue ese momento es mejor estar preparados.
 
 ## Creando el archivo de configuracioón
 
-Webpack procesa tu aplicación e internamente crea un gráfico de dependencia (dependency graph) por cada modulo y genera uno o más *bundles*. Con el archivo `webpack.config.js` podemos configurar avanzadamente este proceso. Dicho archivo consiste en un objeto javascript que tiene estas cuatro propidades básicas:
+Desde la versión 4, ejecutando `npx webpack` en tu proyecto buscará el archivo principal de la aplicación en `src/index.js` y generará el archivo `main.js` sin necesidad de tocar nada más, sin embargo, en el 99% de los casos vas a necesitar una configuración más avanzada.
+
+Webpack procesa tu aplicación e internamente crea un gráfico de dependencia (dependency graph) por cada modulo y genera uno o más *bundles*. Con el archivo `webpack.config.js` podemos configurar este proceso. Dicho archivo consiste en un objeto javascript que tiene estas cuatro propiedades básicas:
 
 * **Entry**: Punto de entrada donde webpack inicia a procesar la aplicación. En otras palabras, es el archivo que usa webpack internamente para empezar a construir el *dependency graph*. Con esto podemos intuir que si hay un modulo que no es importado ni en el archivo principal ni en las dependencias de este, entonces ese modulo no estará incluido en los bundles. Por defecto el valor de esta propiedad es `./src/index.js`. 
 
