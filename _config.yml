@@ -28,6 +28,7 @@ plugins:
   - jekyll-paginate
   - jemoji
   - jekyll-seo-tag
+  - jekyll-feed
 
 
 paginate: 8
