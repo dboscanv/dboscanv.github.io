@@ -6,9 +6,6 @@ toc: true
 img: angular.png
 tags: [JavaScript, Angular, TypeScript, AngularJs]
 ---
-1. TOC
-{:toc}
-
 La evolución del frontend es impresionante. La web (y JavaScript) cada vez son más potentes. Atrás quedaron los tiempos de jQuery donde el frontend solo consistía en hacer animaciones, AJAX y poco más. A partir de la llegada de frameworks como AngularJs, el frontend cambio para siempre.
 
 Hasta hace unos pocos años, AngularJs era uno de los frameworks más exitosos, por eso hay muchas aplicaciones que en la actualidad lo siguen usando. En la última encuesta del año 2017 de la web [State of Js](https://2017.stateofjs.com/2017/front-end/results), arroja que de los encuestados **14.300 usaron Angular alguna vez** y de ese grupo, unos **4.707 desarrolladores lo usarían nuevamente**.
@@ -16,6 +13,9 @@ Hasta hace unos pocos años, AngularJs era uno de los frameworks más exitosos, 
 Pero es conocido que AngularJS tiene problemas, tanto de rendimiento como de estructura, solamente basta con preguntarse **¿por qué Google decidió reescribirlo desde cero?**. Recientemente, anunciaron que la versión 1.7 será la última, y **tendrá soporte hasta Junio de 2020**. Es decir, que luego de esa fecha, haciendo una analogia es como usar Windows XP de sistema operativo. 
 
 Si tienes aplicaciones en AngularJs y estás dudoso de actualizar a la versión más actualizada de Angular, acá explico porque en mi opinión debes actualizar lo más pronto posible (ya que tarde o temprano tendrás que reescribir el código).
+
+1. TOC
+{:toc}
 
 ## Código mantenible y reutilizable
 
