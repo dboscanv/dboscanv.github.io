@@ -6,7 +6,7 @@ toc: true
 img: angular.png
 tags: [JavaScript, Angular, TypeScript, AngularJs]
 ---
-
+{:toc}
 La evolución del frontend es impresionante. La web (y JavaScript) cada vez son más potentes. Atrás quedaron los tiempos de jQuery donde el frontend solo consistía en hacer animaciones, AJAX y poco más. A partir de la llegada de frameworks como AngularJs, el frontend cambio para siempre.
 
 Hasta hace unos pocos años, AngularJs era uno de los frameworks más exitosos, por eso hay muchas aplicaciones que en la actualidad lo siguen usando. En la última encuesta del año 2017 de la web (State of Js)[https://2017.stateofjs.com/2017/front-end/results], arroja que de los encuestados **14.300 usaron Angular alguna vez** y de ese grupo, unos **4.707 desarrolladores lo usarían nuevamente**.

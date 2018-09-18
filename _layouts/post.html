@@ -20,7 +20,7 @@ layout: main
           <span>{{page.date | date: '%d %b %Y'}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
         </div>
       </header>
-      {% include toc.html html=content %}
+      {:toc}
       {{content | markdownify}}
       <div class="page-footer">
         <div class="page-share">
