@@ -27,7 +27,7 @@ Con la llegada de los componentes en Angular, ahora se incita a la reusabilidad,
 
 ## 2. TypeScript
 
-La decisión de usar TypeScript para mi fue un acierto. Programar con **tipado estatico** es genial, es verdad que en proyectos pequeños o medianos no es tan necesario (es cuestión de preferencia) pero cuando hablamos de un proyecto grande las ventajas son notorias. Programar con TypeScript es resumidamente usar JavaScript más los beneficios de tener tipado estatico, interfaces, enums, type assertions, etc.
+La decisión de usar TypeScript para mi fue un acierto. Programar con **tipado estático** es genial, es verdad que en proyectos pequeños o medianos no es tan necesario (es cuestión de preferencia) pero cuando hablamos de un proyecto grande las ventajas son notorias. Programar con TypeScript es resumidamente usar JavaScript más los beneficios de tener tipado estatico, interfaces, enums, type assertions, etc.
 
 Supongamos que tenemos una aplicación de un e-commerce (o de ventas simplemente), con TypeScript podemos crear algo así:
 ```typescript
@@ -68,13 +68,13 @@ Muchas librerías en AngularJs logicámente ya no se mantienen, las personas pre
 
 ## 5. Mayores facilidades para el desarrollo
 
-A parte de darnos una buena estructura para crear aplicaciones escalables y mantenibles, Angular y la mayoría de los frameworks actuales tienen herramientas que nos facilitan el desarrollo, como por ejemplo angular-cli (consola de comandos para generar archivos, ejecutar tests, levantar un servidor de desarrollo, etc) o Angular Augury (extensión para Firefox y Google Chrome que nos permite debuggear más fácilmente).
+A parte de darnos una buena estructura para crear aplicaciones escalables y mantenibles, Angular y la mayoría de los frameworks actuales **tienen herramientas que nos facilitan el desarrollo**, como por ejemplo angular-cli (consola de comandos para generar archivos, ejecutar tests, levantar un servidor de desarrollo, etc) o Angular Augury (extensión para Firefox y Google Chrome que nos permite debuggear más fácilmente).
 
 Además de eso, herramientas como Visual Studio Code o WebStorm soportan Angular (y los frameworks modernos) por defecto.
 
 ## 6. Búsqueda de programadores 
 
-Por un lado tenemos que la mayoría de las personas que saben AngularJs prefieren trabajar en otras tecnologías que ofrezcan mejores beneficios, y por otro lado tenemos que los programadores nuevos no van a aprender AngularJs y será cada vez más difícil conseguir gente capacitada. Si ya es complicado encontrar programadores, que sepan y trabajen con AngularJs será una tarea aún más difícil.
+Por un lado tenemos que la mayoría de las personas que saben AngularJs prefieren trabajar en otras tecnologías que ofrezcan mejores beneficios, y por otro lado tenemos que los programadores nuevos no van a aprender AngularJs y **será cada vez más difícil conseguir gente capacitada**. Si ya es complicado encontrar programadores, que sepan y trabajen con AngularJs será una tarea aún más difícil.
 
 ## 7. Se puede migrar progresivamente
 
