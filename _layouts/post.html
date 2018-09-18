@@ -1,12 +1,13 @@
---- 
-layout: main 
+---
+layout: main
 ---
 <article class="article-page">
   <div class="page-content">
     {% if page.img %}
     <div class="page-cover-image">
       <figure>
-        <img class="page-image" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}"> {% if page.fig-caption %}
+        <img class="page-image" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+        {% if page.fig-caption %}
         <figcaption>{{page.fig-caption}}</figcaption>
         {% endif %}
       </figure>
@@ -20,21 +21,26 @@ layout: main
           <span>{{page.date | date: '%d %b %Y'}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
         </div>
       </header>
-      {:toc}
+      <ul>
+        {:toc}
+      </ul>
       {{content | markdownify}}
       <div class="page-footer">
         <div class="page-share">
           <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" title="Share on Twitter"
             rel="nofollow" target="_blank">Twitter</a>
-          <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow"
+            target="_blank">Facebook</a>
           <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}&source={{ site.title }}"
-          title="Share on LinkedIn" rel="nofollow" target="_blank">
-          Linkedin
-        </a>
-          <a href="http://www.reddit.com/submit?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" title="Share on Reddit" rel="nofollow" target="_blank">
-             Reddit
+            title="Share on LinkedIn" rel="nofollow" target="_blank">
+            Linkedin
           </a>
-          <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+          <a href="http://www.reddit.com/submit?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" title="Share on Reddit"
+            rel="nofollow" target="_blank">
+            Reddit
+          </a>
+          <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow"
+            target="_blank">Google+</a>
         </div>
         <div class="page-tag">
           {% for tag in page.tags %}
