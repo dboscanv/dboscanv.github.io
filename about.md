@@ -6,8 +6,6 @@ permalink: /sobre-mi/
 
 # Sobre mí
 
-Mi nombre es Diego Boscan, en 2017 me recibí como Ingeniero en Informática en la [Universidad Rafael Belloso Chacin](https://www.urbe.edu/estudios/pregrado/ingenieria/informatica.html) y me dedico al desarrollo web. Desde mi primer día de trabajo hasta la actualidad use JavaScript, dicho lenguaje y su ecosistema es de lo que intento aprender y especializarme cada día.
+Mi nombre es Diego Boscan, en 2017 me recibí como Ingeniero en Informática en la [Universidad Rafael Belloso Chacin](https://www.urbe.edu/estudios/pregrado/ingenieria/informatica.html) y me dedico al desarrollo web. Desde que empecé a desarrollar hasta la actualidad he usado JavaScript, convirtiéndose así en mi lenguaje favorito.
 
-Sin embargo, también me gustan otros lenguajes con los que he trabajado: Python (Django), PHP (Laravel).
-
-Soy autodidacta y me gusta mantenerme actualizado, por tal motivo cree este blog, para compartir lo que voy aprendiendo.
+También he programado en otros lenguajes como Python, PHP o Swift. Soy una persona autodidacta y me gusta mantenerme actualizado o simplemente aprender cosas nuevas, por tal motivo cree este blog, para compartir lo que voy aprendiendo.

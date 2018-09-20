@@ -1,6 +1,6 @@
 title: Diego Boscan - Desarrollador
 description: > # this means to ignore newlines until "baseurl:"
-  Desarrollador web full stack, mi objetivo es compartir conocimiento y aprender en el camino
+  Desarrollador web full stack, especializado en JavaScript y su ecosistema
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://diegoboscan.com" # the base hostname & protocol for your site, e.g. http://example.com
@@ -9,7 +9,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Diego Boscan # add your name
 author-img: diego.jpg # add your photo
-about-author: Desarrollador web full stack, autodidacta, apasionado por lo que hago, aprendiendo cada día  # add description
+about-author: Desarrollador autodidacta, apasionado por lo que hago # add description
 
 social-github: dboscanv # add your Github handle
 social-linkedin: diego-boscan-586b16108 # add your Linkedin handle
