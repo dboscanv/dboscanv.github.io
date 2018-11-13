@@ -12,11 +12,11 @@ Es muy importante saber que los decoradores al ser todavía una propuesta experi
 
 ## Qué es y cómo funcionan
 
-Un decorador es una función que, dependiendo de que cosa queramos *decorar*, sus argumentos serán diferentes. Usan la forma `@expression` donde `expression` evaluará la función que será llamada. Para entender esto mejor, explicaré los decoradores más frecuentes con su ejemplo:
+Un decorador es una función que, dependiendo de que cosa queramos *decorar*, sus argumentos serán diferentes. Usan la forma `@expression` donde `expression` evaluará la función que será llamada. A continuación, explicaré los decoradores más frecuentes:
 
 ### Decorador de clase
 
-Es aplicado al constructor de la clase y puede ser usado para **observar, modificar o reemplazar la definición inicial de la clase**. Su único argumento es `target` que vendría siendo la clase decorada, tipado como `Function` o `any`, ejemplo:
+Es aplicado al constructor de la clase y puede ser usado para **observar, modificar o reemplazar la definición inicial de la clase**. Su único argumento es `target` que vendría siendo la clase decorada, tipado como `Function` o `any`:
 
 ```typescript
 function classDecorator(target:Function) {
