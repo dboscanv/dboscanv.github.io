@@ -6,7 +6,7 @@ img: decorators.png
 tags: [JavaScript, TypeScript]
 ---
 
-Los decoradores (*decorators* en inglés) son una [propuesta](https://github.com/tc39/proposal-decorators) para incluir en JavaScript que nos permite **añadir anotaciones y metadatos** a clases, propiedades, métodos, parámetros y accesors. Con TypeScript podemos usarlos activando la propiedad `experimentalDecorators` del `tsconfig.json` de nuestro proyecto o si ejecutamos por la terminal colocar la opción `--experimentalDecorators`
+Los decoradores (*decorators* en inglés) son una [propuesta](https://github.com/tc39/proposal-decorators) para incluir en JavaScript que nos permite **añadir anotaciones y metadatos** a clases, propiedades, métodos, parámetros y accesors. Con TypeScript podemos usarlos activando la propiedad *experimentalDecorators* del `tsconfig.json` de nuestro proyecto o si decidimos compilar mediante el comando `tsc`, colocar siempre la opción de `--experimentalDecorators`.
 
 Es muy importante saber que los decoradores al ser todavía una propuesta experimental es posible que tenga cambios en el futuro. A pesar de esto, la presencia de estos en el desarrollo web actual **está siendo notable**, sobre todo en proyectos que utilizan TypeScript (Angular, [Vue](https://vuejs.org/v2/guide/typescript.html), Nest, Stencil, etc). A través de sencillos ejemplos, intentaré explicar cómo funcionan y cómo crear sus propios decoradores.
 
