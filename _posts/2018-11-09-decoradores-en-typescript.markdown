@@ -6,11 +6,11 @@ img: decorators.png
 tags: [JavaScript, TypeScript]
 ---
 
-Los decoradores (*decorators* en inglés) son una [propuesta](https://github.com/tc39/proposal-decorators) para incluir en JavaScript que nos permite **añadir anotaciones y metadatos** a clases, propiedades, métodos, parámetros y accesors. Con TypeScript podemos usarlos activando la propiedad *experimentalDecorators* del `tsconfig.json` de nuestro proyecto o si decidimos compilar mediante el comando `tsc`, colocar siempre la opción de `--experimentalDecorators`.
+Los decoradores (*decorators* en inglés) son una [propuesta](https://github.com/tc39/proposal-decorators) para incluir en JavaScript que nos permite **añadir anotaciones y metadatos** o cambiar el comportamiento de clases, propiedades, métodos, parámetros y accesors. Con TypeScript podemos usarlos activando la propiedad *experimentalDecorators* del `tsconfig.json` de nuestro proyecto o si decidimos compilar mediante el comando `tsc`, colocar siempre la opción de `--experimentalDecorators ---target ES5`.
 
-Es muy importante saber que los decoradores al ser todavía una propuesta experimental es posible que tenga cambios en el futuro. A pesar de esto, la presencia de estos en el desarrollo web actual **está siendo notable**, sobre todo en proyectos que utilizan TypeScript (Angular, [Vue](https://vuejs.org/v2/guide/typescript.html), Nest, Stencil, etc). A través de sencillos ejemplos, intentaré explicar cómo funcionan y cómo crear sus propios decoradores.
+Es muy importante saber que los decoradores al ser todavía una propuesta experimental es posible que tenga cambios en el futuro. No obstante, la presencia de estos en el desarrollo web actual **está siendo notable**, sobre todo en proyectos que utilizan TypeScript (Angular, [Vue](https://vuejs.org/v2/guide/typescript.html), Nest, Stencil, etc). A través de sencillos ejemplos, intentaré explicar de manera simple cómo funcionan y cómo crear sus propios decoradores.
 
-## Qué es y cómo funcionan
+## ¿Cómo funcionan?
 
 Un decorador es una función que, dependiendo de que cosa queramos *decorar*, sus argumentos serán diferentes. Usan la forma `@expression` donde `expression` evaluará la función que será llamada. A continuación, explicaré los decoradores más frecuentes:
 
@@ -57,7 +57,7 @@ class Person {
 new Person('John').sayHi(); // Bob says hi!
 ```
 
-A pesar de inicializar nuestro objecto con el nombre *John*, el decorador sobrescribe la propiedad, esto es así porque los decoradores son llamados al momento de declarar la clase, no cuando se instancia un objeto.
+A pesar de inicializar nuestro objecto con el nombre *John*, el decorador sobrescribe la propiedad. Cabe destacar que los decoradores **son llamados al momento de la declaración de la clase**, no cuando se instancia un objeto.
 
 ### Decorador de métodos
 
@@ -94,7 +94,7 @@ new ExampleClass().outputSomething('Parametro de prueba');
 
 ### Decorador de propiedades y parámetros
 
-Son más simples que los anteriores, un decorador de propiedades es una función que debe tomar como parámetros `target`, que es el prototipo de la clase, y `propertyKey`, el nombre de la propiedad. Finalmente los decoradores de parámetros, funcionan igual pero con el parámetro adicional `parameterIndex`, que indica la posición en el array, por ejemplo:
+Son más simples que los anteriores, un decorador de propiedades debe tomar como parámetros `target`, que es el prototipo de la clase, y `propertyKey`, el nombre de la propiedad. Finalmente los decoradores de parámetros, funcionan igual pero con el parámetro adicional `parameterIndex`, que indica la posición en el array, por ejemplo:
 
 ```typescript
 function decoratedProperty(target: Object, propertyKey: string) {
