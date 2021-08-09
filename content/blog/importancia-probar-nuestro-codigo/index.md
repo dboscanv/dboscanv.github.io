@@ -1,7 +1,7 @@
 ---
 title: ¿Por qué es importante probar nuestro código?
 date: "2021-08-09T22:40:32.169Z"
-description: Los tests son la principal y más importante herramienta que tenemos los desarrolladores para el aseguramiento de la calidad del software que escribimos.
+description: Los tests son la principal y más importante herramienta que tenemos los desarrolladores para el aseguramiento de la calidad del software que construimos.
 featuredImage: ../../../src/images/testing.jpeg
 ---
 
