@@ -24,7 +24,7 @@ En pocas palabras, es código que prueba tu código productivo con la finalidad 
 
 Una vez que comprendes las ventajas de crear tests, notas la importancia y el gran valor que aportan. Principalmente, **agregando tests los desarrolladores pierden el miedo al cambio**. En proyectos medianos/grandes, debe ser casi obligatorio crear y mantener suites de tests, tanto por la salud mental de las personas que participan, como por la salud misma del proyecto.
 
-## Ventajas de escribir tests
+## Ventajas de crear tests
 
 ### Son automáticos
 
