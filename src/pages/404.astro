@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404: Ruta no encontrada">
+  <section class="hero-card">
+    <span class="hero-kicker">[ERR_404 · NOT_FOUND]</span>
+    <h1 class="hero-title">Esta página no existe</h1>
+    <p class="hero-summary">
+      Llegaste a una ruta que no está en el índice o fue movida hace tiempo.
+    </p>
+    <div class="hero-links">
+      <a href="/" class="retro-pill">← Volver al inicio</a>
+      <a href="/blog" class="retro-pill">Ir al archivo del blog</a>
+    </div>
+  </section>
+</BaseLayout>

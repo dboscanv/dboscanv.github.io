@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import profilePic from '../assets/images/profile-pic.jpeg';
+---
+
+<BaseLayout
+  title="Sobre mí"
+  description={`Sobre ${SITE.author} — Software Engineer en Montevideo, Uruguay.`}
+>
+  <div class="about-header">
+    <div class="avatar-frame">
+      <Image
+        src={profilePic}
+        alt={`Foto de perfil de ${SITE.author}`}
+        width={240}
+        height={240}
+        quality={90}
+      />
+    </div>
+    <div>
+      <span class="hero-kicker">{SITE.role}</span>
+      <h1 style="margin: 0 0 0.35rem 0;">{SITE.author}</h1>
+      <p style="margin: 0; color: var(--text-muted); font-size: 0.98rem;">
+        Haciendo algo de magia desde <strong>{SITE.location}</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      Soy ingeniero de software con experiencia en el desarrollo de soluciones con impacto: 
+      <strong>desde el backend y la arquitectura de sistemas hasta el
+      frontend</strong>. Más allá de un lenguaje o framework de turno, disfruto adueñarme del problema y resolverlo 
+      diseñando software limpio, bien probado y fácil de evolucionar.
+    </p>
+    <p>
+      Sigo muy de cerca el mundo moderno de la <strong>Inteligencia Artificial</strong> y
+      el impacto profundo que está teniendo en nuestra industria. Lejos de pensar
+      que las herramientas reemplazan el criterio técnico, estoy convencido de
+      que <strong>ahora más que nunca necesitamos bases sólidas de programación e
+      ingeniería de software</strong>: entender cómo funcionan los sistemas por
+      dentro, diseñar buenas abstracciones y validar con rigor lo que
+      construimos.
+    </p>
+    <p>
+     Fuera del código, en mis tiempos libres me gusta leer y ver fútbol.
+    </p>
+
+    <div class="now-box">
+      <h2>¿En qué estoy ahora?</h2>
+      <ul>
+        <li>
+          <strong>Trabajo:</strong> Senior Full Stack Engineer en{' '}
+          <strong>PedidosYa</strong>, la empresa más grande de delivery y quick commerce en América Latina.
+        </li>
+        <li>
+          <strong>Aprendizaje continuo:</strong> En mis tiempos libres aprendo
+          sobre IA, ingeniería de software y me mantengo al día con las nuevas
+          tendencias.
+        </li>
+        <li>
+          <strong>Hobbies:</strong> Ver fútbol, leer y tomar buen café (ah, y jugar GTA VI).
+        </li>
+      </ul>
+    </div>
+
+    <h2>Contacto y redes</h2>
+    <p>
+      Puedes encontrar mi código en{' '}
+      <a href={SITE.social.github} target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>{' '}
+      o conectar conmigo a través de{' '}
+      <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>.
+    </p>
+  </div>
+</BaseLayout>

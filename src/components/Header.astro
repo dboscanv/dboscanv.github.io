@@ -1,0 +1,67 @@
+---
+import { SITE } from '../config';
+
+const pathname = Astro.url.pathname;
+const normalize = (p: string) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p);
+const currentPath = normalize(pathname);
+---
+
+<header class="site-header">
+  <a href="/" class="site-brand" aria-label={SITE.title}>
+    <span class="brand-prompt">~/</span>diego-boscan<span class="brand-cursor" aria-hidden="true"></span>
+  </a>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    {
+      SITE.nav.map((item) => {
+        const isActive =
+          item.href === '/'
+            ? currentPath === '/'
+            : currentPath === normalize(item.href);
+        return (
+          <a
+            href={item.href}
+            class="nav-link"
+            aria-current={isActive ? 'page' : undefined}
+          >
+            [{item.label}]
+          </a>
+        );
+      })
+    }
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      type="button"
+      aria-label="Cambiar entre modo claro y oscuro"
+      title="Cambiar tema (claro / oscuro)"
+    >
+      <span id="theme-toggle-icon">☼/☾</span>
+    </button>
+  </nav>
+</header>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-toggle-icon');
+
+    function updateLabel(theme) {
+      if (!icon) return;
+      icon.textContent = theme === 'dark' ? '☼ claro' : '☾ oscuro';
+    }
+
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    updateLabel(current);
+
+    if (btn) {
+      btn.addEventListener('click', function () {
+        const active = document.documentElement.getAttribute('data-theme');
+        const next = active === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('color-mode', next);
+        updateLabel(next);
+      });
+    }
+  })();
+</script>

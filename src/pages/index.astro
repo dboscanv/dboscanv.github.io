@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { SITE, getReadingTime } from '../config';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout>
+  <section class="hero-card" aria-label="Presentación">
+    <span class="hero-kicker">{SITE.role} · {SITE.location}</span>
+    <h1 class="hero-title">{SITE.intro.greeting}</h1>
+    <p class="hero-summary">
+      {SITE.intro.summary}
+    </p>
+    <div class="hero-links">
+      <a
+        href={SITE.social.github}
+        class="retro-pill"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub ↗
+      </a>
+      <a
+        href={SITE.social.linkedin}
+        class="retro-pill"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn ↗
+      </a>
+      {SITE.social.email && (
+        <a href={`mailto:${SITE.social.email}`} class="retro-pill">
+          Email ✉
+        </a>
+      )}
+      <a href="/sobre-mi" class="retro-pill">
+        Más sobre mí →
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="recent-writing">
+    <div class="section-header">
+      <h2 id="recent-writing" class="section-title">Escritos</h2>
+      <a href="/blog" class="section-action">ver archivo ({posts.length}) →</a>
+    </div>
+
+    <ol class="post-list">
+      {
+        posts.map((post) => {
+          const reading = getReadingTime(post.body || '');
+          return (
+            <li class="post-item">
+              <article itemscope itemtype="https://schema.org/Article">
+                <div class="post-meta">
+                  <FormattedDate date={post.data.date} format="iso" />
+                  <span>·</span>
+                  <span>{reading.label}</span>
+                </div>
+                <h3 class="post-item-title">
+                  <a href={`/${post.id}/`} itemprop="url">
+                    <span itemprop="headline">{post.data.title}</span>
+                  </a>
+                </h3>
+                <p class="post-excerpt" itemprop="description">
+                  {post.data.description}
+                </p>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </section>
+</BaseLayout>

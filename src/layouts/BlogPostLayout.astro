@@ -1,0 +1,71 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+interface NavPost {
+  id: string;
+  title: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  readingTimeLabel: string;
+  featuredImage?: string;
+  previous?: NavPost | null;
+  next?: NavPost | null;
+}
+
+const {
+  title,
+  description,
+  date,
+  readingTimeLabel,
+  featuredImage,
+  previous,
+  next,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={featuredImage}
+  articleDate={date}
+>
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+    <header class="post-header">
+      <a href="/blog" class="back-link">← volver al archivo</a>
+      <h1 class="post-title" itemprop="headline">{title}</h1>
+      <div class="post-meta">
+        <FormattedDate date={date} format="long" />
+        <span>·</span>
+        <span>{readingTimeLabel}</span>
+      </div>
+    </header>
+
+    <div class="prose" itemprop="articleBody">
+      <slot />
+    </div>
+  </article>
+
+  {(previous || next) && (
+    <nav class="post-nav" aria-label="Artículos anterior y siguiente">
+      {previous ? (
+        <a href={`/${previous.id}/`} class="post-nav-card prev" rel="prev">
+          <span class="post-nav-label">← Anterior</span>
+          <span class="post-nav-title">{previous.title}</span>
+        </a>
+      ) : (
+        <div />
+      )}
+      {next && (
+        <a href={`/${next.id}/`} class="post-nav-card next" rel="next">
+          <span class="post-nav-label">Siguiente →</span>
+          <span class="post-nav-title">{next.title}</span>
+        </a>
+      )}
+    </nav>
+  )}
+</BaseLayout>

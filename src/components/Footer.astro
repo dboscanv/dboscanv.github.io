@@ -1,0 +1,24 @@
+---
+import { SITE } from '../config';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div>
+    © {year} {SITE.author} · {SITE.location}
+  </div>
+  <div class="footer-links">
+    <a href={SITE.social.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+    <span>·</span>
+    <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    {SITE.social.email && (
+      <>
+        <span>·</span>
+        <a href={`mailto:${SITE.social.email}`}>Email</a>
+      </>
+    )}
+    <span>·</span>
+    <a href="/rss.xml">RSS</a>
+  </div>
+</footer>

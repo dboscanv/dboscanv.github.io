@@ -1,0 +1,701 @@
+/* ==========================================================================
+   Diego Boscan — IndieWeb / Zine Editorial Design System
+   Paleta: Papel cálido (#f6f3ec) / Carbón profundo (#121513) + Verde insignia
+   ========================================================================== */
+
+:root {
+  /* Light Mode: Papel cálido & Esmeralda */
+  --bg: #f6f3ec;
+  --bg-elevated: #efeae0;
+  --bg-code: #ebe5d8;
+  --text: #1c1e1d;
+  --text-muted: #525955;
+  --text-faint: #78807b;
+  --accent: #1c8548;
+  --accent-hover: #146335;
+  --accent-subtle: rgba(28, 133, 72, 0.1);
+  --border: #cfc8b8;
+  --border-strong: #1c1e1d;
+  --shadow-retro: 3px 3px 0px #cfc8b8;
+  --shadow-retro-hover: 3px 3px 0px #1c8548;
+
+  /* Tipografía: Monospace en estructura/títulos + Serif editorial para lectura */
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", "SFMono-Regular", Consolas,
+    "Liberation Mono", Menlo, monospace;
+  --font-serif: "Charter", "Bitstream Charter", "Newsreader", "Sitka Text",
+    Cambria, Georgia, serif;
+
+  /* Layout */
+  --max-width: 43rem;
+}
+
+html[data-theme="dark"] {
+  /* Dark Mode: Carbón profundo & Verde fósforo */
+  --bg: #121513;
+  --bg-elevated: #181c1a;
+  --bg-code: #161a18;
+  --text: #e6ebe8;
+  --text-muted: #9ca6a0;
+  --text-faint: #6c7670;
+  --accent: #30d065;
+  --accent-hover: #5ce088;
+  --accent-subtle: rgba(48, 208, 101, 0.12);
+  --border: #2a312d;
+  --border-strong: #30d065;
+  --shadow-retro: 3px 3px 0px #242b27;
+  --shadow-retro-hover: 3px 3px 0px #30d065;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.72;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+/* Contenedor principal */
+.site-wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.25rem 1.25rem 3.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Tipografía general */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-mono);
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(1.65rem, 4vw, 2.15rem);
+  margin-top: 0;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 1.45rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1.35rem 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-hover);
+  background-color: var(--accent-subtle);
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed var(--border);
+  margin: 2.5rem 0;
+}
+
+/* ==========================================================================
+   Header & Navegación Retro
+   ========================================================================== */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px dashed var(--border);
+  font-family: var(--font-mono);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.site-brand:hover {
+  color: var(--accent);
+  background: transparent;
+}
+
+.brand-prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.brand-cursor {
+  display: inline-block;
+  width: 0.5ch;
+  height: 1.05em;
+  background-color: var(--accent);
+  vertical-align: text-bottom;
+  opacity: 0.85;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--accent);
+  border-color: var(--border);
+  background-color: var(--bg-elevated);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 700;
+  border-color: var(--accent);
+  background-color: var(--accent-subtle);
+}
+
+.theme-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background-color: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.22rem 0.55rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--border);
+  transition: all 0.15s ease;
+  margin-left: 0.25rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 2px 2px 0px var(--accent);
+  transform: translate(-1px, -1px);
+}
+
+.theme-toggle:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   Portada (Inicio): Presentación Personal 100% Tipográfica
+   ========================================================================== */
+
+.hero-card {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-retro);
+  padding: 1.65rem 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.45rem;
+  display: block;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 3.8vw, 1.95rem);
+  margin: 0 0 0.75rem 0;
+  color: var(--text);
+}
+
+.hero-summary {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.retro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  box-shadow: 2px 2px 0px var(--border);
+  transition: all 0.15s ease;
+}
+
+.retro-pill:hover,
+.retro-pill:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 2px 2px 0px var(--accent);
+  background-color: var(--bg);
+  transform: translate(-1px, -1px);
+}
+
+/* ==========================================================================
+   Listados de Posts (Home y /blog)
+   ========================================================================== */
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: var(--text);
+}
+
+.section-title::before {
+  content: "## ";
+  color: var(--accent);
+}
+
+.section-action {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.post-item {
+  padding-bottom: 1.65rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.post-item-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.45rem 0;
+}
+
+.post-item-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-item-title a:hover,
+.post-item-title a:focus-visible {
+  color: var(--accent);
+  background: transparent;
+  text-decoration: underline;
+}
+
+.post-excerpt {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Archivo agrupado por año en /blog */
+.year-group {
+  margin-bottom: 2.5rem;
+}
+
+.year-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  background-color: var(--accent-subtle);
+  border: 1px solid var(--accent);
+  padding: 0.15rem 0.6rem;
+  margin: 0 0 1.25rem 0;
+}
+
+/* ==========================================================================
+   Artículo Individual (BlogPostLayout)
+   ========================================================================== */
+
+.post-header {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.back-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.post-title {
+  margin: 0 0 0.75rem 0;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+/* Cuerpo de lectura (Prose) */
+.prose {
+  font-size: 1.125rem;
+  line-height: 1.78;
+}
+
+.prose h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed var(--border);
+  color: var(--text);
+}
+
+.prose h3 {
+  margin-top: 2rem;
+  color: var(--text);
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  margin: 1.75rem 0;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.75rem auto;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-retro);
+  background-color: #fff;
+  padding: 0.35rem;
+}
+
+/* Código inline y bloques Shiki */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background-color: var(--bg-code);
+  padding: 0.15em 0.38em;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+pre.astro-code {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1.75rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-retro);
+  border-radius: 0;
+}
+
+pre.astro-code code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+/* Soporte Shiki dual theme (claro / oscuro) */
+html[data-theme="dark"] .astro-code,
+html[data-theme="dark"] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* Navegación Anterior / Siguiente entre posts */
+.post-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+.post-nav-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: 2px 2px 0px var(--border);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.post-nav-card:hover {
+  border-color: var(--accent);
+  box-shadow: 2px 2px 0px var(--accent);
+  transform: translate(-1px, -1px);
+}
+
+.post-nav-card.next {
+  text-align: right;
+}
+
+.post-nav-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+.post-nav-title {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ==========================================================================
+   Página Sobre mí & Sección "Ahora" (/sobre-mi)
+   ========================================================================== */
+
+.about-header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-retro);
+}
+
+.avatar-frame {
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 3px 3px 0px var(--accent);
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.03);
+}
+
+.now-box {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-retro);
+  padding: 1.35rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.now-box h2 {
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.now-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  .site-wrapper {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-header {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-card {
+    padding: 1.25rem 1.1rem;
+  }
+}

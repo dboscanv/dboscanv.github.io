@@ -2,7 +2,7 @@
 title: Razones para migrar de AngularJs a Angular
 date: "2018-09-17T22:40:32.169Z"
 description: Es conocido que AngularJS tiene problemas de rendimiento, solamente basta con preguntarse ¿por qué Google decidio reescribirlo desde cero? Recientemente, anunciaron que la versión 1.7 tendrá soporte hasta Junio de 2020. 
-featuredImage: ../../../src/images/angular.png
+featuredImage: /images/og/angular.png
 ---
 
 La evolución del frontend es impresionante. La web (y JavaScript) cada vez son más potentes. Atrás quedaron los tiempos de jQuery donde el frontend solo consistía en hacer animaciones, AJAX y poco más. A partir de la llegada de frameworks como AngularJs, el frontend cambio para siempre.

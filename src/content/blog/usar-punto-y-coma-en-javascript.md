@@ -2,7 +2,7 @@
 title: ¿Debería usar punto y coma en JavaScript?
 date: "2018-08-11T22:40:32.169Z"
 description: ¿Es realmente necesario usar punto y coma en JavaScript? La respuesta corta es no, pero hay unas reglas que tenemos que saber.
-featuredImage: ../../../src/images/js-1.png
+featuredImage: /images/og/js-1.png
 ---
 
 Hace unos meses vi por primera vez código JavaScript sin puntos y comas, yo soy una de esas personas que venimos de la "escuela Java", y estamos acostumbrados a colocar punto y coma (semicolon en inglés) casi que automáticamente al finalizar una expresión. 

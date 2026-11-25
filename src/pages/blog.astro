@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getReadingTime } from '../config';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const postsByYear = posts.reduce<Record<number, typeof posts>>((acc, post) => {
+  const year = post.data.date.getUTCFullYear();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(postsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<BaseLayout
+  title="Blog"
+  description="Archivo de artículos sobre ingeniería de software, desarrollo backend y frontend, fundamentos e inteligencia artificial."
+>
+  <header class="post-header">
+    <h1>Archivo del Blog</h1>
+    <p class="post-excerpt">
+      Notas y artículos sobre ingeniería de software, arquitectura, buenas
+      prácticas y tecnología. También disponible vía{' '}
+      <a href="/rss.xml">RSS</a>.
+    </p>
+  </header>
+
+  {
+    years.map((year) => (
+      <section class="year-group" aria-labelledby={`year-${year}`}>
+        <h2 id={`year-${year}`} class="year-badge">
+          {year}
+        </h2>
+        <ol class="post-list">
+          {postsByYear[year].map((post) => {
+            const reading = getReadingTime(post.body || '');
+            return (
+              <li class="post-item">
+                <article>
+                  <div class="post-meta">
+                    <FormattedDate date={post.data.date} format="iso" />
+                    <span>·</span>
+                    <span>{reading.label}</span>
+                  </div>
+                  <h3 class="post-item-title">
+                    <a href={`/${post.id}/`}>{post.data.title}</a>
+                  </h3>
+                  <p class="post-excerpt">{post.data.description}</p>
+                </article>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))
+  }
+</BaseLayout>
